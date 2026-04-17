@@ -1,1 +1,72 @@
-@import 'tailwindcss'
+@import "tailwindcss";
+
+@theme {
+    /* COLORS */
+    --color-obsidian: #0f0f0f;
+    --color-graphite: #1c1c1e;
+    --color-iron: #2c2c2e;
+    --color-steel: #48484a;
+    --color-ash: #8e8e93;
+    --color-silver: #c7c7cc;
+    --color-pearl: #f5f5f0;
+    --color-white: #ffffff;
+
+    --color-gold: #c9a84c;
+    --color-gold-light: #e2c97e;
+    --color-gold-dark: #a07c30;
+
+    --color-bg: #f5f5f0;
+    --color-bg-card: #ffffff;
+    --color-text: #0f0f0f;
+    --color-text-muted: #48484a;
+    --color-text-subtle: #8e8e93;
+    --color-border: #e2e2dc;
+
+    /* FONTS */
+    --font-display: "Cormorant Garamond", serif;
+    --font-body: "DM Sans", sans-serif;
+}
+
+@layer base {
+    * {
+        @apply box-border m-0 p-0;
+    }
+
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply font-body text-base text-text bg-bg leading-relaxed;
+    }
+
+    img,
+    video {
+        @apply block max-w-full;
+    }
+
+    a {
+        @apply no-underline text-inherit;
+    }
+
+    ul,
+    ol {
+        @apply list-none;
+    }
+}
+
+@layer utilities {
+    .container {
+        @apply w-full max-w-7xl mx-auto px-6 xl:px-10;
+    }
+
+    .divider-gold {
+        @apply w-10 h-px bg-gold;
+    }
+}
+
+@layer components {
+    header .navlink {
+        @apply relative text-[13px] font-medium text-silver tracking-[0.06em] uppercase transition-colors duration-250 hover:text-gold-light hover:cursor-pointer after:absolute after:content-[''] after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-[width] after:duration-250 hover:after:w-full
+    }
+}

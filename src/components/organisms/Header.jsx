@@ -21,6 +21,7 @@ export default function Header() {
               <a
                 href={import.meta.env.VITE_DASHBOARD_BACKEND_URL}
                 className="navlink"
+                target="_blank"
               >
                 Area riservata
               </a>

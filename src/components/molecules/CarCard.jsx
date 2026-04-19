@@ -3,8 +3,6 @@ import { getImageUrl } from "../../services/api";
 import IsElectrifiedBadge from "../atoms/IsElectrifiedBadge";
 
 export default function CarCard({ car }) {
-  console.log(car);
-
   return (
     <Link
       to={`/cars/${car.id}`}
@@ -23,7 +21,7 @@ export default function CarCard({ car }) {
         />
 
         {/* Electrified badge */}
-        {car.fuel_type.is_electrified && <IsElectrifiedBadge />}
+        {car.fuel_type.is_electrified == true && <IsElectrifiedBadge />}
       </div>
 
       {/* CARD BODY */}

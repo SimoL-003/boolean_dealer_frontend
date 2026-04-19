@@ -1,6 +1,10 @@
-export default function IsElectrifiedBadge() {
+export default function IsElectrifiedBadge({
+  className = "absolute top-3 left-3",
+}) {
   return (
-    <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-emerald-950/80 text-emerald-400 text-[11px] font-medium tracking-wider uppercase px-2.5 py-1 rounded backdrop-blur-sm">
+    <div
+      className={`${className} flex items-center gap-1.5 bg-emerald-950/80 text-emerald-400 text-[11px] font-medium tracking-wider uppercase px-2.5 py-1 rounded backdrop-blur-sm`}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 640 640"

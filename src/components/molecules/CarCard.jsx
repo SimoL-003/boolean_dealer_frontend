@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { getImageUrl } from "../../services/api";
+import IsElectrifiedBadge from "../atoms/IsElectrifiedBadge";
 
 export default function CarCard({ car }) {
+  console.log(car);
+
   return (
     <Link
       to={`/cars/${car.id}`}
@@ -18,6 +21,9 @@ export default function CarCard({ car }) {
           alt={`${car.car_model.brand.name} ${car.car_model.name}`}
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
+
+        {/* Electrified badge */}
+        {car.fuel_type.is_electrified && <IsElectrifiedBadge />}
       </div>
 
       {/* CARD BODY */}

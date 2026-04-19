@@ -9,8 +9,6 @@ async function getCars() {
 
 async function getCarDetails(id) {
   const res = await axios.get(`${BASE_URL}/api/cars/${id}`);
-  console.log(id);
-
   return res.data;
 }
 

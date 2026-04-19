@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { getImageUrl } from "../../services/api";
 import IsElectrifiedBadge from "../atoms/IsElectrifiedBadge";
+import NotAvailable from "../atoms/NotAvailable";
 
 export default function CarCard({ car }) {
   return (
@@ -51,7 +52,7 @@ export default function CarCard({ car }) {
               Km
             </span>
             <span className="text-[13px] font-medium text-text-muted">
-              {car.km.toLocaleString("it-IT")}
+              {car.km?.toLocaleString("it-IT")}
             </span>
           </div>
         </div>
@@ -59,7 +60,11 @@ export default function CarCard({ car }) {
         {/* Footer */}
         <div className="flex items-end justify-between pt-4 border-t border-border">
           <p className="font-display text-2xl font-semibold text-text tracking-tight">
-            {Number(car.price).toLocaleString("it-IT")} €
+            {car.price ? (
+              `${Number(car.price).toLocaleString("it-IT")} €`
+            ) : (
+              <NotAvailable />
+            )}
           </p>
           <span className="text-[11px] tracking-[0.12em] uppercase text-gold font-medium transition-colors duration-250 group-hover:text-gold-dark">
             Details →

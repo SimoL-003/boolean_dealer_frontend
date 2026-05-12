@@ -44,7 +44,7 @@ export default function CarCard({ car }) {
               Year
             </span>
             <span className="text-[13px] font-medium text-text-muted">
-              {car.year}
+              {car.year || <NotAvailable />}
             </span>
           </div>
           <div className="flex flex-col gap-px">
@@ -52,7 +52,7 @@ export default function CarCard({ car }) {
               Km
             </span>
             <span className="text-[13px] font-medium text-text-muted">
-              {car.km?.toLocaleString("it-IT")}
+              {car.km ? car.km?.toLocaleString("it-IT") : <NotAvailable />}
             </span>
           </div>
         </div>

@@ -9,7 +9,7 @@ export default function Header() {
           <span className="font-serif text-2xl font-medium text-white tracking-tight">
             BoolAuto
           </span>
-          <span className="text-xs font-light text-ash tracking-[0.2em] uppercase">
+          <span className="hidden sm:block text-xs font-light text-ash tracking-[0.2em] uppercase">
             Your trusted dealer for used cars
           </span>
         </Link>
@@ -23,7 +23,7 @@ export default function Header() {
                 className="navlink"
                 target="_blank"
               >
-                Area riservata
+                Private area
               </a>
             </li>
           </ul>
